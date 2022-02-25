@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,16 +17,35 @@
     <body>
         <h1>Asegúrate de descargar el boleto o llévalo impreso el día del evento</h1>
         
-        <div>
-            <%
-            out.print("<p"+request.getAttribute("First_name")+request.getAttribute("Last_name")+";\"> " + "</p>"); 
-            %>
-        </div>
-        <div>
-            <%
-            out.print("<p"+request.getAttribute("state")+";\"> " + "</p>"); 
-            %>
-        </div>
+        <table>
+        <tr>
+            <th>
+                Nombre: <% out.print(request.getAttribute("First_name")); %>
+            </th>
+            <th>
+                Apellidos: <% out.print(request.getAttribute("Last_name")); %>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Pais: <% out.print(request.getAttribute("state")); %>
+            </th>
+            <th>
+                Ciudad: <% out.print(request.getAttribute("city")); %>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Codigo Postal: <% out.print(request.getAttribute("Zip")); %>
+            </th>
+            <th>
+                Boleto: <% out.print("General"); %>
+            </th>
+            <th>
+                Ciudad: <% out.print("Tenancingo 9, Condesa, CDMX"); %>
+            </th>
+        </tr>
+        </table>
         
         <p style="color:red">
             PRECAUCIÓN:
